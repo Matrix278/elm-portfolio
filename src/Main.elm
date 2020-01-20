@@ -182,6 +182,9 @@ view model =
                     ]
                 ]
             ]
-        , div [ class "portfolio" ] []
+        , div [ class "portfolio" ]
+            [ div [ class "container" ]
+                []
+            ]
         ]
     }
