@@ -163,13 +163,24 @@ view model =
         , div [ class "skillsBackground" ]
             [ div [ class "container" ]
                 [ div [ id "skills" ]
-                    ([ p [] [ text "I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path." ]
-                     , ul [] <| skillsList model.skills
-                     ]
-                        |> List.append (titleShadow "Skills")
-                    )
+                    [ div [ class "skillsText" ]
+                        ([ p [] [ text "I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path." ]
+                         , ul [] <| skillsList model.skills
+                         ]
+                            |> List.append (titleShadow "Skills")
+                        )
+                    ]
+                , div [ class "skillsGrid" ]
+                    [ i [ class "devicon-html5-plain-wordmark" ] []
+                    , i [ class "devicon-css3-plain-wordmark" ] []
+                    , i [ class "devicon-javascript-plain" ] []
+                    , i [ class "devicon-php-plain" ] []
+                    , i [ class "devicon-mysql-plain" ] []
+                    , i [ class "devicon-bootstrap-plain" ] []
+                    , i [ class "devicon-react-original-wordmark" ] []
+                    , i [ class "devicon-csharp-plain" ] []
+                    ]
                 ]
-            , div [] []
             ]
         , div [ class "portfolio" ] []
         ]
