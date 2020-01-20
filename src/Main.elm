@@ -27,15 +27,14 @@ main =
 
 
 type alias Model =
-    { zone : Time.Zone
-    , time : Time.Posix
+    { skills : List String
     }
 
 
 init : () -> ( Model, Cmd Msg )
 init _ =
-    ( Model Time.utc (Time.millisToPosix 0)
-    , Task.perform AdjustTimeZone Time.here
+    ( Model [ "HTML", "CSS", "JS", "PHP", "MySQL/SQL", "Bootstrap", "C#", "React" ]
+    , Cmd.none
     )
 
 
@@ -44,20 +43,14 @@ init _ =
 
 
 type Msg
-    = ShowTime Time.Posix
-    | AdjustTimeZone Time.Zone
+    = NoOp
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        ShowTime time ->
-            ( { model | time = time }
-            , Cmd.none
-            )
-
-        AdjustTimeZone newZone ->
-            ( { model | zone = newZone }
+        NoOp ->
+            ( model
             , Cmd.none
             )
 
@@ -67,8 +60,8 @@ update msg model =
 
 
 subscriptions : Model -> Sub Msg
-subscriptions model =
-    Time.every 1000 ShowTime
+subscriptions _ =
+    Sub.none
 
 
 
@@ -109,14 +102,9 @@ navbarList logoName =
         )
 
 
-skillsList : List (Html Msg)
-skillsList =
-    let
-        textList : List String
-        textList =
-            [ "HTML", "CSS", "JS", "PHP", "MySQL/SQL", "Bootstrap", "C#", "React" ]
-    in
-    List.map (\a -> li [] [ Html.a [] [ text a ] ]) textList
+skillsList : List String -> List (Html Msg)
+skillsList skills =
+    List.map (\a -> li [] [ Html.a [] [ text a ] ]) skills
 
 
 navbarView : String -> Html Msg
@@ -176,12 +164,13 @@ view model =
             [ div [ class "container" ]
                 [ div [ id "skills" ]
                     ([ p [] [ text "I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path." ]
-                     , ul []
-                        skillsList
+                     , ul [] <| skillsList model.skills
                      ]
                         |> List.append (titleShadow "Skills")
                     )
                 ]
+            , div [] []
             ]
+        , div [ class "portfolio" ] []
         ]
     }
