@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0bd6e783-477a-4a70-ac72-93d7a6f58e96" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ElmWorkspace">
+    <elmProjects>
+      <project path="$PROJECT_DIR$/elm.json" />
+    </elmProjects>
+    <settings elmCompilerPath="$PROJECT_DIR$/node_modules/.bin/elm" elmFormatPath="$PROJECT_DIR$/node_modules/.bin/elm-format" elmTestPath="" isElmFormatOnSaveEnabled="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="portfolio" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WTiiW2KIyWZPyzxul5HHgugAVr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ELM_TEST_RUN_CONFIGURATION" factoryName="Elm Test configuration factory">
+      <ElmTestRunConfiguration elm-folder="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="255" y="29" width="800" height="685" key="#Inspections" timestamp="1579468755875">
+      <screen x="35" y="27" width="1245" height="692" />
+    </state>
+    <state x="255" y="29" width="800" height="685" key="#Inspections/35.27.1245.692@35.27.1245.692" timestamp="1579468755875" />
+    <state x="411" y="231" width="488" height="284" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1579360410810">
+      <screen x="35" y="27" width="1245" height="692" />
+    </state>
+    <state x="411" y="231" width="488" height="284" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/35.27.1245.692@35.27.1245.692" timestamp="1579360410810" />
+    <state x="514" y="205" width="376" height="343" key="FileChooserDialogImpl" timestamp="1579361483323">
+      <screen x="35" y="27" width="1245" height="692" />
+    </state>
+    <state x="514" y="205" width="376" height="343" key="FileChooserDialogImpl/35.27.1245.692@35.27.1245.692" timestamp="1579361483323" />
+    <state x="760" y="310" width="424" height="484" key="FileChooserDialogImpl/35.27.1885.1053@35.27.1885.1053" timestamp="1579180338998" />
+    <state x="466" y="187" key="SettingsEditor" timestamp="1579524144814">
+      <screen x="35" y="27" width="1885" height="1053" />
+    </state>
+    <state x="466" y="187" key="SettingsEditor/35.27.1885.1053@35.27.1885.1053" timestamp="1579524144814" />
+    <state x="386" y="98" width="540" height="524" key="StructurePopup" timestamp="1579360465207">
+      <screen x="35" y="27" width="1245" height="692" />
+    </state>
+    <state x="386" y="98" width="540" height="524" key="StructurePopup/35.27.1245.692@35.27.1245.692" timestamp="1579360465207" />
+    <state width="498" height="451" key="SwitcherDM" timestamp="1579524015656">
+      <screen x="35" y="27" width="1885" height="1053" />
+    </state>
+    <state width="498" height="451" key="SwitcherDM/35.27.1885.1053@35.27.1885.1053" timestamp="1579524015656" />
+    <state x="633" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1579506170858">
+      <screen x="35" y="27" width="1885" height="1053" />
+    </state>
+    <state x="633" y="380" key="com.intellij.ide.util.TipDialog/35.27.1885.1053@35.27.1885.1053" timestamp="1579506170858" />
+    <state x="234" y="27" width="869" height="692" key="find.popup" timestamp="1579360161271">
+      <screen x="35" y="27" width="1245" height="692" />
+    </state>
+    <state x="234" y="27" width="869" height="692" key="find.popup/35.27.1245.692@35.27.1245.692" timestamp="1579360161271" />
+    <state x="306" y="83" width="700" height="530" key="recent.locations.popup" timestamp="1579360252975">
+      <screen x="35" y="27" width="1245" height="692" />
+    </state>
+    <state x="306" y="83" width="700" height="530" key="recent.locations.popup/35.27.1245.692@35.27.1245.692" timestamp="1579360252975" />
+    <state x="641" y="253" width="672" height="677" key="run.anything.popup" timestamp="1579519872732">
+      <screen x="35" y="27" width="1885" height="1053" />
+    </state>
+    <state x="641" y="253" width="672" height="677" key="run.anything.popup/35.27.1885.1053@35.27.1885.1053" timestamp="1579519872731" />
+    <state x="640" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1579524021624">
+      <screen x="35" y="27" width="1885" height="1053" />
+    </state>
+    <state x="435" y="178" width="672" height="446" key="search.everywhere.popup/35.27.1245.692@35.27.1245.692" timestamp="1579468731138" />
+    <state x="640" y="257" width="672" height="678" key="search.everywhere.popup/35.27.1885.1053@35.27.1885.1053" timestamp="1579524021624" />
+  </component>
+</project>
