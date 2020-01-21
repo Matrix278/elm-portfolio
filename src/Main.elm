@@ -3,10 +3,7 @@ module Main exposing (Model, Msg(..), init, main, subscriptions, update, view)
 import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick, onInput)
 import String.Extra
-import Task
-import Time
 
 
 
@@ -135,6 +132,27 @@ titleShadow title =
     ]
 
 
+
+--, i [ class "devicon-css3-plain-wordmark" ] []
+
+
+skillsDevicon : List (Html Msg)
+skillsDevicon =
+    let
+        skills : List String
+        skills =
+            [ "devicon-css3-plain-wordmark"
+            , "devicon-javascript-plain"
+            , "devicon-php-plain"
+            , "devicon-mysql-plain"
+            , "devicon-bootstrap-plain"
+            , "devicon-react-original-wordmark"
+            , "devicon-csharp-plain"
+            ]
+    in
+    List.map (\a -> li [ class a ] []) skills
+
+
 view : Model -> Browser.Document Msg
 view model =
     { title = "Portfolio"
@@ -171,20 +189,18 @@ view model =
                         )
                     ]
                 , div [ class "skillsGrid" ]
-                    [ i [ class "devicon-html5-plain-wordmark" ] []
-                    , i [ class "devicon-css3-plain-wordmark" ] []
-                    , i [ class "devicon-javascript-plain" ] []
-                    , i [ class "devicon-php-plain" ] []
-                    , i [ class "devicon-mysql-plain" ] []
-                    , i [ class "devicon-bootstrap-plain" ] []
-                    , i [ class "devicon-react-original-wordmark" ] []
-                    , i [ class "devicon-csharp-plain" ] []
-                    ]
+                    skillsDevicon
                 ]
             ]
         , div [ class "portfolio" ]
             [ div [ class "container" ]
-                []
+                [ div [ id "portfolio" ]
+                    ([ div [ class "portfolioGrid" ]
+                        []
+                     ]
+                        |> List.append (titleShadow "Portfolio")
+                    )
+                ]
             ]
         ]
     }

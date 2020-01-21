@@ -5500,6 +5500,22 @@ var $author$project$Main$navbarView = function (logoName) {
 					]))
 			]));
 };
+var $author$project$Main$skillsDevicon = function () {
+	var skills = _List_fromArray(
+		['devicon-css3-plain-wordmark', 'devicon-javascript-plain', 'devicon-php-plain', 'devicon-mysql-plain', 'devicon-bootstrap-plain', 'devicon-react-original-wordmark', 'devicon-csharp-plain']);
+	return A2(
+		$elm$core$List$map,
+		function (a) {
+			return A2(
+				$elm$html$Html$li,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class(a)
+					]),
+				_List_Nil);
+		},
+		skills);
+}();
 var $author$project$Main$skillsList = function (skills) {
 	return A2(
 		$elm$core$List$map,
@@ -5726,25 +5742,40 @@ var $author$project$Main$view = function (model) {
 									[
 										$elm$html$Html$Attributes$id('skills')
 									]),
-								A2(
-									$elm$core$List$append,
-									$author$project$Main$titleShadow('Skills'),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$p,
-											_List_Nil,
+								_List_fromArray(
+									[
+										A2(
+										$elm$html$Html$div,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$class('skillsText')
+											]),
+										A2(
+											$elm$core$List$append,
+											$author$project$Main$titleShadow('Skills'),
 											_List_fromArray(
 												[
-													$elm$html$Html$text('I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path.')
-												])),
-											A2(
-											$elm$html$Html$ul,
-											_List_Nil,
-											$author$project$Main$skillsList(model.skills))
-										])))
-							])),
-						A2($elm$html$Html$div, _List_Nil, _List_Nil)
+													A2(
+													$elm$html$Html$p,
+													_List_Nil,
+													_List_fromArray(
+														[
+															$elm$html$Html$text('I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path.')
+														])),
+													A2(
+													$elm$html$Html$ul,
+													_List_Nil,
+													$author$project$Main$skillsList(model.skills))
+												])))
+									])),
+								A2(
+								$elm$html$Html$div,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('skillsGrid')
+									]),
+								$author$project$Main$skillsDevicon)
+							]))
 					])),
 				A2(
 				$elm$html$Html$div,
@@ -5752,7 +5783,37 @@ var $author$project$Main$view = function (model) {
 					[
 						$elm$html$Html$Attributes$class('portfolio')
 					]),
-				_List_Nil)
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('container')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$div,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$id('portfolio')
+									]),
+								A2(
+									$elm$core$List$append,
+									$author$project$Main$titleShadow('Portfolio'),
+									_List_fromArray(
+										[
+											A2(
+											$elm$html$Html$div,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$class('portfolioGrid')
+												]),
+											_List_Nil)
+										])))
+							]))
+					]))
 			]),
 		title: 'Portfolio'
 	};
