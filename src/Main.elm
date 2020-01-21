@@ -136,8 +136,8 @@ titleShadow title =
 --, i [ class "devicon-css3-plain-wordmark" ] []
 
 
-skillsDevicon : List (Html Msg)
-skillsDevicon =
+skillDevicons : List (Html Msg)
+skillDevicons =
     let
         skills : List String
         skills =
@@ -189,14 +189,14 @@ view model =
                         )
                     ]
                 , div [ class "skillsGrid" ]
-                    skillsDevicon
+                    skillDevicons
                 ]
             ]
         , div [ class "portfolio" ]
             [ div [ class "container" ]
                 [ div [ id "portfolio" ]
                     ([ div [ class "portfolioGrid" ]
-                        []
+                        [ div [] [] ]
                      ]
                         |> List.append (titleShadow "Portfolio")
                     )
