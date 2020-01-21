@@ -5200,17 +5200,170 @@ var $elm$core$Task$perform = F2(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
 var $elm$browser$Browser$document = _Browser_document;
-var $author$project$Main$Model = function (skills) {
-	return {skills: skills};
+var $author$project$Main$Loading = {$: 'Loading'};
+var $elm$json$Json$Decode$decodeValue = _Json_run;
+var $author$project$Main$Language = function (portfolio) {
+	return function (firstName) {
+		return function (welcomeHeaderText) {
+			return function (welcomeTitle) {
+				return function (welcomeButton) {
+					return function (student) {
+						return function (schoolKehraText) {
+							return function (juniorSoftwareDev) {
+								return function (tallinnPolytechnicText) {
+									return function (juniorLogIT) {
+										return function (aboutMe) {
+											return function (skillsText) {
+												return function (skills) {
+													return function (websiteOfGames) {
+														return function (websiteOfLaptops) {
+															return function (websiteOfCelebrationPlanner) {
+																return function (ticTacToe) {
+																	return function (rockPaperScissors) {
+																		return function (becomeAHacker) {
+																			return function (freeCodeCamp) {
+																				return function (contact) {
+																					return function (sendAMail) {
+																						return function (footerText) {
+																							return {aboutMe: aboutMe, becomeAHacker: becomeAHacker, contact: contact, firstName: firstName, footerText: footerText, freeCodeCamp: freeCodeCamp, juniorLogIT: juniorLogIT, juniorSoftwareDev: juniorSoftwareDev, portfolio: portfolio, rockPaperScissors: rockPaperScissors, schoolKehraText: schoolKehraText, sendAMail: sendAMail, skills: skills, skillsText: skillsText, student: student, tallinnPolytechnicText: tallinnPolytechnicText, ticTacToe: ticTacToe, websiteOfCelebrationPlanner: websiteOfCelebrationPlanner, websiteOfGames: websiteOfGames, websiteOfLaptops: websiteOfLaptops, welcomeButton: welcomeButton, welcomeHeaderText: welcomeHeaderText, welcomeTitle: welcomeTitle};
+																						};
+																					};
+																				};
+																			};
+																		};
+																	};
+																};
+															};
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
 };
+var $NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$custom = $elm$json$Json$Decode$map2($elm$core$Basics$apR);
+var $elm$json$Json$Decode$field = _Json_decodeField;
+var $NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required = F3(
+	function (key, valDecoder, decoder) {
+		return A2(
+			$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$custom,
+			A2($elm$json$Json$Decode$field, key, valDecoder),
+			decoder);
+	});
+var $elm$json$Json$Decode$string = _Json_decodeString;
+var $author$project$Main$langDecoder = A3(
+	$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+	'footerText',
+	$elm$json$Json$Decode$string,
+	A3(
+		$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+		'sendAMail',
+		$elm$json$Json$Decode$string,
+		A3(
+			$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+			'contact',
+			$elm$json$Json$Decode$string,
+			A3(
+				$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+				'freeCodeCamp',
+				$elm$json$Json$Decode$string,
+				A3(
+					$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+					'becomeAHacker',
+					$elm$json$Json$Decode$string,
+					A3(
+						$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+						'rockPaperScissors',
+						$elm$json$Json$Decode$string,
+						A3(
+							$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+							'ticTacToe',
+							$elm$json$Json$Decode$string,
+							A3(
+								$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+								'websiteOfCelebrationPlanner',
+								$elm$json$Json$Decode$string,
+								A3(
+									$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+									'websiteOfLaptops',
+									$elm$json$Json$Decode$string,
+									A3(
+										$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+										'websiteOfGames',
+										$elm$json$Json$Decode$string,
+										A3(
+											$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+											'skills',
+											$elm$json$Json$Decode$string,
+											A3(
+												$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+												'skillsText',
+												$elm$json$Json$Decode$string,
+												A3(
+													$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+													'aboutMe',
+													$elm$json$Json$Decode$string,
+													A3(
+														$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+														'juniorLogIT',
+														$elm$json$Json$Decode$string,
+														A3(
+															$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+															'tallinnPolytechnicText',
+															$elm$json$Json$Decode$string,
+															A3(
+																$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																'juniorSoftwareDev',
+																$elm$json$Json$Decode$string,
+																A3(
+																	$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																	'schoolKehraText',
+																	$elm$json$Json$Decode$string,
+																	A3(
+																		$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																		'student',
+																		$elm$json$Json$Decode$string,
+																		A3(
+																			$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																			'welcomeButton',
+																			$elm$json$Json$Decode$string,
+																			A3(
+																				$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																				'welcomeTitle',
+																				$elm$json$Json$Decode$string,
+																				A3(
+																					$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																					'welcomeHeaderText',
+																					$elm$json$Json$Decode$string,
+																					A3(
+																						$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																						'firstName',
+																						$elm$json$Json$Decode$string,
+																						A3(
+																							$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																							'portfolio',
+																							$elm$json$Json$Decode$string,
+																							$elm$json$Json$Decode$succeed($author$project$Main$Language))))))))))))))))))))))));
+var $author$project$Main$decodeTranslations = function (englishTranslation) {
+	return A2($elm$json$Json$Decode$decodeValue, $author$project$Main$langDecoder, englishTranslation);
+};
+var $elm$core$Debug$log = _Debug_log;
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
-var $author$project$Main$init = function (_v0) {
-	return _Utils_Tuple2(
-		$author$project$Main$Model(
-			_List_fromArray(
-				['HTML', 'CSS', 'JS', 'PHP', 'MySQL/SQL', 'Bootstrap', 'C#', 'React'])),
-		$elm$core$Platform$Cmd$none);
+var $author$project$Main$init = function (englishTranslation) {
+	var _v0 = A2(
+		$elm$core$Debug$log,
+		'tomato',
+		$author$project$Main$decodeTranslations(englishTranslation));
+	return _Utils_Tuple2($author$project$Main$Loading, $elm$core$Platform$Cmd$none);
 };
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
@@ -5221,6 +5374,8 @@ var $author$project$Main$update = F2(
 	function (msg, model) {
 		return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 	});
+var $elm$json$Json$Decode$value = _Json_decodeValue;
+var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$core$List$append = F2(
 	function (xs, ys) {
 		if (!ys.b) {
@@ -5240,7 +5395,6 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $elm$html$Html$header = _VirtualDom_node('header');
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
@@ -5500,7 +5654,7 @@ var $author$project$Main$navbarView = function (logoName) {
 					]))
 			]));
 };
-var $author$project$Main$skillsDevicon = function () {
+var $author$project$Main$skillDevicons = function () {
 	var skills = _List_fromArray(
 		['devicon-css3-plain-wordmark', 'devicon-javascript-plain', 'devicon-php-plain', 'devicon-mysql-plain', 'devicon-bootstrap-plain', 'devicon-react-original-wordmark', 'devicon-csharp-plain']);
 	return A2(
@@ -5516,7 +5670,9 @@ var $author$project$Main$skillsDevicon = function () {
 		},
 		skills);
 }();
-var $author$project$Main$skillsList = function (skills) {
+var $author$project$Main$skillsList = function () {
+	var list = _List_fromArray(
+		['HTML', 'CSS', 'JS', 'PHP', 'MySQL/SQL', 'Bootstrap', 'C#', 'React']);
 	return A2(
 		$elm$core$List$map,
 		function (a) {
@@ -5534,8 +5690,9 @@ var $author$project$Main$skillsList = function (skills) {
 							]))
 					]));
 		},
-		skills);
-};
+		list);
+}();
+var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
 var $elm$core$String$toUpper = _String_toUpper;
 var $elm$core$String$trim = _String_trim;
 var $elm_community$string_extra$String$Extra$camelize = function (string) {
@@ -5762,10 +5919,7 @@ var $author$project$Main$view = function (model) {
 														[
 															$elm$html$Html$text('I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path.')
 														])),
-													A2(
-													$elm$html$Html$ul,
-													_List_Nil,
-													$author$project$Main$skillsList(model.skills))
+													A2($elm$html$Html$ul, _List_Nil, $author$project$Main$skillsList)
 												])))
 									])),
 								A2(
@@ -5774,7 +5928,7 @@ var $author$project$Main$view = function (model) {
 									[
 										$elm$html$Html$Attributes$class('skillsGrid')
 									]),
-								$author$project$Main$skillsDevicon)
+								$author$project$Main$skillDevicons)
 							]))
 					])),
 				A2(
@@ -5810,7 +5964,27 @@ var $author$project$Main$view = function (model) {
 												[
 													$elm$html$Html$Attributes$class('portfolioGrid')
 												]),
-											_List_Nil)
+											_List_fromArray(
+												[
+													A2(
+													$elm$html$Html$div,
+													_List_fromArray(
+														[
+															$elm$html$Html$Attributes$class('project-tile')
+														]),
+													_List_fromArray(
+														[
+															A2(
+															$elm$html$Html$a,
+															_List_fromArray(
+																[
+																	$elm$html$Html$Attributes$class('project'),
+																	$elm$html$Html$Attributes$href('http://nitram278.000webhostapp.com/'),
+																	$elm$html$Html$Attributes$target('_blank')
+																]),
+															_List_Nil)
+														]))
+												]))
 										])))
 							]))
 					]))
@@ -5820,5 +5994,4 @@ var $author$project$Main$view = function (model) {
 };
 var $author$project$Main$main = $elm$browser$Browser$document(
 	{init: $author$project$Main$init, subscriptions: $author$project$Main$subscriptions, update: $author$project$Main$update, view: $author$project$Main$view});
-_Platform_export({'Main':{'init':$author$project$Main$main(
-	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}});}(this));
+_Platform_export({'Main':{'init':$author$project$Main$main($elm$json$Json$Decode$value)(0)}});}(this));

@@ -3,6 +3,8 @@ module Main exposing (Model, Msg(..), init, main, subscriptions, update, view)
 import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Json.Decode exposing (Decoder, float, int, nullable, string)
+import Json.Decode.Pipeline as DP
 import String.Extra
 
 
@@ -23,16 +25,91 @@ main =
 -- MODEL
 
 
-type alias Model =
-    { skills : List String
+type Model
+    = Loading
+
+
+type alias Language =
+    { portfolio : String
+    , firstName : String
+    , welcomeHeaderText : String
+    , welcomeTitle : String
+    , welcomeButton : String
+    , student : String
+    , schoolKehraText : String
+    , juniorSoftwareDev : String
+    , tallinnPolytechnicText : String
+    , juniorLogIT : String
+    , aboutMe : String
+    , skillsText : String
+    , skills : String
+    , websiteOfGames : String
+    , websiteOfLaptops : String
+    , websiteOfCelebrationPlanner : String
+    , ticTacToe : String
+    , rockPaperScissors : String
+    , becomeAHacker : String
+    , freeCodeCamp : String
+    , contact : String
+    , sendAMail : String
+    , footerText : String
     }
 
 
-init : () -> ( Model, Cmd Msg )
-init _ =
-    ( Model [ "HTML", "CSS", "JS", "PHP", "MySQL/SQL", "Bootstrap", "C#", "React" ]
-    , Cmd.none
-    )
+decodeTranslations : Json.Decode.Value -> Result Json.Decode.Error Language
+decodeTranslations englishTranslation =
+    Json.Decode.decodeValue langDecoder englishTranslation
+
+
+langDecoder : Json.Decode.Decoder Language
+langDecoder =
+    Json.Decode.succeed Language
+        |> DP.required "portfolio" Json.Decode.string
+        |> DP.required "firstName" Json.Decode.string
+        |> DP.required "welcomeHeaderText" Json.Decode.string
+        |> DP.required "welcomeTitle" Json.Decode.string
+        |> DP.required "welcomeButton" Json.Decode.string
+        |> DP.required "student" Json.Decode.string
+        |> DP.required "schoolKehraText" Json.Decode.string
+        |> DP.required "juniorSoftwareDev" Json.Decode.string
+        |> DP.required "tallinnPolytechnicText" Json.Decode.string
+        |> DP.required "juniorLogIT" Json.Decode.string
+        |> DP.required "aboutMe" Json.Decode.string
+        |> DP.required "skillsText" Json.Decode.string
+        |> DP.required "skills" Json.Decode.string
+        |> DP.required "websiteOfGames" Json.Decode.string
+        |> DP.required "websiteOfLaptops" Json.Decode.string
+        |> DP.required "websiteOfCelebrationPlanner" Json.Decode.string
+        |> DP.required "ticTacToe" Json.Decode.string
+        |> DP.required "rockPaperScissors" Json.Decode.string
+        |> DP.required "becomeAHacker" Json.Decode.string
+        |> DP.required "freeCodeCamp" Json.Decode.string
+        |> DP.required "contact" Json.Decode.string
+        |> DP.required "sendAMail" Json.Decode.string
+        |> DP.required "footerText" Json.Decode.string
+
+
+decodePortfolio : Json.Decode.Value -> Result Json.Decode.Error String
+decodePortfolio englishTranslation =
+    Json.Decode.decodeValue oneDecoder englishTranslation
+
+
+oneDecoder : Json.Decode.Decoder String
+oneDecoder =
+    Json.Decode.field "firstName" Json.Decode.string
+
+
+init : Json.Decode.Value -> ( Model, Cmd Msg )
+init englishTranslation =
+    let
+        translations : Result Json.Decode.Error Language
+        translations =
+            decodeTranslations englishTranslation
+
+        _ =
+            Debug.log "tomato" <| decodeTranslations englishTranslation
+    in
+    ( Loading, Cmd.none )
 
 
 
@@ -99,9 +176,22 @@ navbarList logoName =
         )
 
 
-skillsList : List String -> List (Html Msg)
-skillsList skills =
-    List.map (\a -> li [] [ Html.a [] [ text a ] ]) skills
+skillsList : List (Html Msg)
+skillsList =
+    let
+        list : List String
+        list =
+            [ "HTML"
+            , "CSS"
+            , "JS"
+            , "PHP"
+            , "MySQL/SQL"
+            , "Bootstrap"
+            , "C#"
+            , "React"
+            ]
+    in
+    List.map (\a -> li [] [ Html.a [] [ text a ] ]) list
 
 
 navbarView : String -> Html Msg
@@ -130,10 +220,6 @@ titleShadow title =
     [ div [ class <| String.Extra.decapitalize <| String.Extra.camelize <| String.Extra.unsurround "" title ++ "Title" ] [ text title ]
     , div [ class <| String.Extra.decapitalize <| String.Extra.camelize <| String.Extra.unsurround "" title ++ "TitleShadow" ] [ text title ]
     ]
-
-
-
---, i [ class "devicon-css3-plain-wordmark" ] []
 
 
 skillDevicons : List (Html Msg)
@@ -183,7 +269,7 @@ view model =
                 [ div [ id "skills" ]
                     [ div [ class "skillsText" ]
                         ([ p [] [ text "I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path." ]
-                         , ul [] <| skillsList model.skills
+                         , ul [] <| skillsList
                          ]
                             |> List.append (titleShadow "Skills")
                         )
@@ -196,7 +282,11 @@ view model =
             [ div [ class "container" ]
                 [ div [ id "portfolio" ]
                     ([ div [ class "portfolioGrid" ]
-                        [ div [] [] ]
+                        [ div [ class "project-tile" ]
+                            [ a [ class "project", href "http://nitram278.000webhostapp.com/", target "_blank" ]
+                                []
+                            ]
+                        ]
                      ]
                         |> List.append (titleShadow "Portfolio")
                     )
