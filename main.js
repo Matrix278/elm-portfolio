@@ -5760,7 +5760,7 @@ var $author$project$Main$portfolioTile = F3(
 										]),
 									_List_fromArray(
 										[
-											$elm$html$Html$text('&lt;')
+											$elm$html$Html$text('<')
 										])),
 									$elm$html$Html$text(title),
 									A2(
@@ -5771,7 +5771,7 @@ var $author$project$Main$portfolioTile = F3(
 										]),
 									_List_fromArray(
 										[
-											$elm$html$Html$text('&gt;')
+											$elm$html$Html$text('>')
 										]))
 								]))
 						]))
@@ -6017,7 +6017,7 @@ var $author$project$Main$view = function (model) {
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('portfolio')
+							$elm$html$Html$Attributes$class('portfolioBackground')
 						]),
 					_List_fromArray(
 						[

@@ -160,9 +160,9 @@ portfolioTile site imageSrc title =
         [ a [ class "project", href site, target "_blank" ]
             [ img [ class "project-image", src imageSrc ] []
             , p [ class "project-title" ]
-                [ span [ class "code" ] [ text "&lt;" ]
+                [ span [ class "code" ] [ text "<" ]
                 , text title
-                , span [ class "code" ] [ text "&gt;" ]
+                , span [ class "code" ] [ text ">" ]
                 ]
             ]
         ]
@@ -296,7 +296,7 @@ view model =
                             skillDevicons
                         ]
                     ]
-                , div [ class "portfolio" ]
+                , div [ class "portfolioBackground" ]
                     [ div [ class "container" ]
                         [ div [ id "portfolio" ]
                             ([ div [ class "portfolioGrid" ]
