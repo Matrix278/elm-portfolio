@@ -144,8 +144,8 @@ subscriptions _ =
 -- VIEW
 
 
-educationGrid : String -> String -> String -> String -> Html Msg
-educationGrid columnClass agesText headerText paragraphText =
+educationTile : String -> String -> String -> String -> Html Msg
+educationTile columnClass agesText headerText paragraphText =
     div [ class columnClass ]
         [ h3 [] [ text agesText ]
         , hr [ class "educationLine" ] []
@@ -166,6 +166,12 @@ portfolioTile site imageSrc title =
                 ]
             ]
         ]
+
+
+contactLink : String -> String -> String -> Html Msg
+contactLink site fontAwesomeIconClass title =
+    div [ class "contactLink" ]
+        [ a [ href site, target "_blank" ] [ i [ class fontAwesomeIconClass ] [], text (" " ++ title) ] ]
 
 
 navbarList : String -> Html Msg
@@ -280,9 +286,9 @@ view model =
                     [ div [ class "container" ]
                         [ div [ id "about" ]
                             ([ div [ class "educationGrid" ]
-                                [ educationGrid "educationFirst" "2008 - 2016" lang.student lang.schoolKehraText
-                                , educationGrid "educationSecond" "2016 - 2019" lang.juniorSoftwareDev lang.tallinnPolytechnicText
-                                , educationGrid "educationThree" "2019 - 2021" lang.juniorLogIT lang.tthkText
+                                [ educationTile "educationFirst" "2008 - 2016" lang.student lang.schoolKehraText
+                                , educationTile "educationSecond" "2016 - 2019" lang.juniorSoftwareDev lang.tallinnPolytechnicText
+                                , educationTile "educationThree" "2019 - 2021" lang.juniorLogIT lang.tthkText
                                 ]
                              ]
                                 |> List.append (titleShadow lang.aboutMe)
@@ -332,19 +338,19 @@ view model =
                     [ div [ class "container" ]
                         [ div [ id "contact" ]
                             ([ div [ class "contactGrid" ]
-                                [ div [ class "contactLink" ]
-                                    [ a [ href "https://github.com/Matrix278", target "_blank" ] [ i [ class "fa fa-github" ] [], text " GitHub" ] ]
-                                , div [ class "contactLink" ]
-                                    [ a [ href "https://facebook.com/nitram278", target "_blank" ] [ i [ class "fa fa-facebook-official" ] [], text "Facebook" ] ]
-                                , div [ class "contactLink" ]
-                                    [ a [ href "https://twitter.com/nitram278", target "_blank" ] [ i [ class "fa fa-twitter" ] [], text "Twitter" ] ]
-                                , div [ class "contactLink" ]
-                                    [ a [ href "mailto:martin.sidorov27@gmail.com" ] [ i [ class "fa fa-envelope" ] [], text lang.sendAMail ] ]
+                                [ contactLink "https://github.com/Matrix278" "fa fa-github" "GitHub"
+                                , contactLink "https://facebook.com/nitram278" "fa fa-facebook-official" "Facebook"
+                                , contactLink "https://twitter.com/nitram278" "fa fa-twitter" "Twitter"
+                                , contactLink "mailto:martin.sidorov27@gmail.com" "fa fa-envelope" lang.sendAMail
                                 ]
                              ]
                                 |> List.append (titleShadow lang.contact)
                             )
                         ]
+                    ]
+                , footer []
+                    [ p [] [ text lang.footerText ]
+                    , p [] [ text "© Martin Sidorov" ]
                     ]
                 ]
 
