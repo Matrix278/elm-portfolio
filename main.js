@@ -5996,15 +5996,15 @@ var $author$project$Main$view = function (model) {
 																$elm$html$Html$text(lang.skillsText)
 															])),
 														A2($elm$html$Html$ul, _List_Nil, $author$project$Main$skillsList)
-													]))
-											]))),
-									A2(
-									$elm$html$Html$div,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$class('skillsGrid')
-										]),
-									$author$project$Main$skillDevicons)
+													])),
+												A2(
+												$elm$html$Html$div,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$class('skillsGrid')
+													]),
+												$author$project$Main$skillDevicons)
+											])))
 								]))
 						])),
 					A2(

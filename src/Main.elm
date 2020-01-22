@@ -299,11 +299,10 @@ view model =
                                 [ p [] [ text lang.skillsText ]
                                 , ul [] <| skillsList
                                 ]
+                             , div [ class "skillsGrid" ] skillDevicons
                              ]
                                 |> List.append (titleShadow lang.skills)
                             )
-                        , div [ class "skillsGrid" ]
-                            skillDevicons
                         ]
                     ]
 
