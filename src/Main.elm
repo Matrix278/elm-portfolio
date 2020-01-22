@@ -154,46 +154,18 @@ educationGrid columnClass agesText headerText paragraphText =
         ]
 
 
-
---http://nitram278.000webhostapp.com/
---mGames.png
---Website of games (with CMS)
-
-
-portfolioGrid : String -> String -> String -> Html Msg
-portfolioGrid site imageSrc title =
+portfolioTile : String -> String -> String -> Html Msg
+portfolioTile site imageSrc title =
     div [ class "project-tile" ]
         [ a [ class "project", href site, target "_blank" ]
             [ img [ class "project-image", src imageSrc ] []
-            , p [ class "prtoject-title" ]
+            , p [ class "project-title" ]
                 [ span [ class "code" ] [ text "&lt;" ]
                 , text title
                 , span [ class "code" ] [ text "&gt;" ]
                 ]
             ]
         ]
-
-
-
---type alias Data =
---    { distance : Int
---    , time : Int
---    }
---
---
---type Direction
---    = Left Data
---    | Right Data
---
---
---distance : Direction -> Int
---distance direction =
---    case direction of
---        Left a ->
---            a.distance
---
---        Right b ->
---            b.distance
 
 
 navbarList : String -> Html Msg
@@ -313,13 +285,13 @@ view model =
                 , div [ class "skillsBackground" ]
                     [ div [ class "container" ]
                         [ div [ id "skills" ]
-                            [ div [ class "skillsText" ]
-                                ([ p [] [ text lang.skillsText ]
-                                 , ul [] <| skillsList
-                                 ]
-                                    |> List.append (titleShadow lang.skills)
-                                )
-                            ]
+                            ([ div [ class "skillsText" ]
+                                [ p [] [ text lang.skillsText ]
+                                , ul [] <| skillsList
+                                ]
+                             ]
+                                |> List.append (titleShadow lang.skills)
+                            )
                         , div [ class "skillsGrid" ]
                             skillDevicons
                         ]
@@ -328,13 +300,13 @@ view model =
                     [ div [ class "container" ]
                         [ div [ id "portfolio" ]
                             ([ div [ class "portfolioGrid" ]
-                                [ portfolioGrid "http://nitram278.000webhostapp.com/" "img/mGames.png" lang.websiteOfGames
-                                , portfolioGrid "http://method27.000webhostapp.com/laptops/" "img/laptops.png" lang.websiteOfLaptops
-                                , portfolioGrid "https://martceelebrate.000webhostapp.com" "img/celebrationPlanner.png" lang.websiteOfCelebrationPlanner
-                                , portfolioGrid "https://play.google.com/store/apps/details?id=com.nitram.tictactoeMS" "img/ticTacToe.png" lang.ticTacToe
-                                , portfolioGrid "https://play.google.com/store/apps/details?id=com.nitram278.rockPaperScissors" "img/rockPaperScissors.png" lang.rockPaperScissors
-                                , portfolioGrid "https://play.google.com/store/apps/details?id=com.MSANDevs.Becomeahacker" "img/becomeAHacker.png" lang.becomeAHacker
-                                , portfolioGrid "https://codepen.io/Matrix27/pens/public" "https://www.npofocus.nl/thumbs/i/14000/mod_media_image/14105.w1913.0.c9cc1fa.png" lang.freeCodeCamp
+                                [ portfolioTile "http://nitram278.000webhostapp.com/" "img/mGames.png" lang.websiteOfGames
+                                , portfolioTile "http://method27.000webhostapp.com/laptops/" "img/laptops.png" lang.websiteOfLaptops
+                                , portfolioTile "https://martceelebrate.000webhostapp.com" "img/celebrationPlanner.png" lang.websiteOfCelebrationPlanner
+                                , portfolioTile "https://play.google.com/store/apps/details?id=com.nitram.tictactoeMS" "img/ticTacToe.png" lang.ticTacToe
+                                , portfolioTile "https://play.google.com/store/apps/details?id=com.nitram278.rockPaperScissors" "img/rockPaperScissors.png" lang.rockPaperScissors
+                                , portfolioTile "https://play.google.com/store/apps/details?id=com.MSANDevs.Becomeahacker" "img/becomeAHacker.png" lang.becomeAHacker
+                                , portfolioTile "https://codepen.io/Matrix27/pens/public" "https://www.npofocus.nl/thumbs/i/14000/mod_media_image/14105.w1913.0.c9cc1fa.png" lang.freeCodeCamp
                                 ]
                              ]
                                 |> List.append (titleShadow lang.portfolio)

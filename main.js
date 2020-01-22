@@ -5716,7 +5716,7 @@ var $elm$html$Html$Attributes$src = function (url) {
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
-var $author$project$Main$portfolioGrid = F3(
+var $author$project$Main$portfolioTile = F3(
 	function (site, imageSrc, title) {
 		return A2(
 			$elm$html$Html$div,
@@ -5748,7 +5748,7 @@ var $author$project$Main$portfolioGrid = F3(
 							$elm$html$Html$p,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$class('prtoject-title')
+									$elm$html$Html$Attributes$class('project-title')
 								]),
 							_List_fromArray(
 								[
@@ -5981,17 +5981,17 @@ var $author$project$Main$view = function (model) {
 										[
 											$elm$html$Html$Attributes$id('skills')
 										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$div,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$class('skillsText')
-												]),
-											A2(
-												$elm$core$List$append,
-												$author$project$Main$titleShadow(lang.skills),
+									A2(
+										$elm$core$List$append,
+										$author$project$Main$titleShadow(lang.skills),
+										_List_fromArray(
+											[
+												A2(
+												$elm$html$Html$div,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$class('skillsText')
+													]),
 												_List_fromArray(
 													[
 														A2(
@@ -6002,8 +6002,8 @@ var $author$project$Main$view = function (model) {
 																$elm$html$Html$text(lang.skillsText)
 															])),
 														A2($elm$html$Html$ul, _List_Nil, $author$project$Main$skillsList)
-													])))
-										])),
+													]))
+											]))),
 									A2(
 									$elm$html$Html$div,
 									_List_fromArray(
@@ -6048,13 +6048,13 @@ var $author$project$Main$view = function (model) {
 													]),
 												_List_fromArray(
 													[
-														A3($author$project$Main$portfolioGrid, 'http://nitram278.000webhostapp.com/', 'img/mGames.png', lang.websiteOfGames),
-														A3($author$project$Main$portfolioGrid, 'http://method27.000webhostapp.com/laptops/', 'img/laptops.png', lang.websiteOfLaptops),
-														A3($author$project$Main$portfolioGrid, 'https://martceelebrate.000webhostapp.com', 'img/celebrationPlanner.png', lang.websiteOfCelebrationPlanner),
-														A3($author$project$Main$portfolioGrid, 'https://play.google.com/store/apps/details?id=com.nitram.tictactoeMS', 'img/ticTacToe.png', lang.ticTacToe),
-														A3($author$project$Main$portfolioGrid, 'https://play.google.com/store/apps/details?id=com.nitram278.rockPaperScissors', 'img/rockPaperScissors.png', lang.rockPaperScissors),
-														A3($author$project$Main$portfolioGrid, 'https://play.google.com/store/apps/details?id=com.MSANDevs.Becomeahacker', 'img/becomeAHacker.png', lang.becomeAHacker),
-														A3($author$project$Main$portfolioGrid, 'https://codepen.io/Matrix27/pens/public', 'https://www.npofocus.nl/thumbs/i/14000/mod_media_image/14105.w1913.0.c9cc1fa.png', lang.freeCodeCamp)
+														A3($author$project$Main$portfolioTile, 'http://nitram278.000webhostapp.com/', 'img/mGames.png', lang.websiteOfGames),
+														A3($author$project$Main$portfolioTile, 'http://method27.000webhostapp.com/laptops/', 'img/laptops.png', lang.websiteOfLaptops),
+														A3($author$project$Main$portfolioTile, 'https://martceelebrate.000webhostapp.com', 'img/celebrationPlanner.png', lang.websiteOfCelebrationPlanner),
+														A3($author$project$Main$portfolioTile, 'https://play.google.com/store/apps/details?id=com.nitram.tictactoeMS', 'img/ticTacToe.png', lang.ticTacToe),
+														A3($author$project$Main$portfolioTile, 'https://play.google.com/store/apps/details?id=com.nitram278.rockPaperScissors', 'img/rockPaperScissors.png', lang.rockPaperScissors),
+														A3($author$project$Main$portfolioTile, 'https://play.google.com/store/apps/details?id=com.MSANDevs.Becomeahacker', 'img/becomeAHacker.png', lang.becomeAHacker),
+														A3($author$project$Main$portfolioTile, 'https://codepen.io/Matrix27/pens/public', 'https://www.npofocus.nl/thumbs/i/14000/mod_media_image/14105.w1913.0.c9cc1fa.png', lang.freeCodeCamp)
 													]))
 											])))
 								]))

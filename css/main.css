@@ -186,7 +186,7 @@ nav {
 
 /*---------------------------HOME-----------------------------*/
 .homeBackground {
-    background-image: url("img/banner1.jpg");
+    background-image: url("../img/banner1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
