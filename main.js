@@ -5386,7 +5386,6 @@ var $author$project$Main$update = F2(
 		return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 	});
 var $elm$json$Json$Decode$value = _Json_decodeValue;
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$core$List$append = F2(
 	function (xs, ys) {
 		if (!ys.b) {
@@ -5395,6 +5394,7 @@ var $elm$core$List$append = F2(
 			return A3($elm$core$List$foldr, $elm$core$List$cons, ys, xs);
 		}
 	});
+var $elm$html$Html$button = _VirtualDom_node('button');
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -5404,14 +5404,53 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			$elm$json$Json$Encode$string(string));
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var $elm$html$Html$i = _VirtualDom_node('i');
+var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$Main$contactLink = F3(
+	function (site, fontAwesomeIconClass, title) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('contactLink')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$a,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$href(site),
+							$elm$html$Html$Attributes$target('_blank')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$i,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class(fontAwesomeIconClass)
+								]),
+							_List_Nil),
+							$elm$html$Html$text(' ' + title)
+						]))
+				]));
+	});
 var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$h4 = _VirtualDom_node('h4');
 var $elm$html$Html$hr = _VirtualDom_node('hr');
 var $elm$html$Html$p = _VirtualDom_node('p');
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $author$project$Main$educationGrid = F4(
+var $author$project$Main$educationTile = F4(
 	function (columnClass, agesText, headerText, paragraphText) {
 		return A2(
 			$elm$html$Html$div,
@@ -5451,15 +5490,9 @@ var $author$project$Main$educationGrid = F4(
 						]))
 				]));
 	});
+var $elm$html$Html$footer = _VirtualDom_node('footer');
 var $elm$html$Html$header = _VirtualDom_node('header');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
-var $elm$html$Html$i = _VirtualDom_node('i');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $author$project$Main$homeView = F3(
 	function (headerText, welcomeTitle, buttonText) {
@@ -5715,7 +5748,6 @@ var $elm$html$Html$Attributes$src = function (url) {
 		'src',
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
-var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
 var $author$project$Main$portfolioTile = F3(
 	function (site, imageSrc, title) {
 		return A2(
@@ -5809,6 +5841,7 @@ var $author$project$Main$skillsList = function () {
 		},
 		list);
 }();
+var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
 var $elm$core$String$toUpper = _String_toUpper;
 var $elm$core$String$trim = _String_trim;
 var $elm_community$string_extra$String$Extra$camelize = function (string) {
@@ -5946,9 +5979,9 @@ var $author$project$Main$view = function (model) {
 													]),
 												_List_fromArray(
 													[
-														A4($author$project$Main$educationGrid, 'educationFirst', '2008 - 2016', lang.student, lang.schoolKehraText),
-														A4($author$project$Main$educationGrid, 'educationSecond', '2016 - 2019', lang.juniorSoftwareDev, lang.tallinnPolytechnicText),
-														A4($author$project$Main$educationGrid, 'educationThree', '2019 - 2021', lang.juniorLogIT, lang.tthkText)
+														A4($author$project$Main$educationTile, 'educationFirst', '2008 - 2016', lang.student, lang.schoolKehraText),
+														A4($author$project$Main$educationTile, 'educationSecond', '2016 - 2019', lang.juniorSoftwareDev, lang.tallinnPolytechnicText),
+														A4($author$project$Main$educationTile, 'educationThree', '2019 - 2021', lang.juniorLogIT, lang.tthkText)
 													]))
 											])))
 								]))
@@ -6088,116 +6121,50 @@ var $author$project$Main$view = function (model) {
 													]),
 												_List_fromArray(
 													[
-														A2(
-														$elm$html$Html$div,
-														_List_fromArray(
-															[
-																$elm$html$Html$Attributes$class('contactLink')
-															]),
-														_List_fromArray(
-															[
-																A2(
-																$elm$html$Html$a,
-																_List_fromArray(
-																	[
-																		$elm$html$Html$Attributes$href('https://github.com/Matrix278'),
-																		$elm$html$Html$Attributes$target('_blank')
-																	]),
-																_List_fromArray(
-																	[
-																		A2(
-																		$elm$html$Html$i,
-																		_List_fromArray(
-																			[
-																				$elm$html$Html$Attributes$class('fa fa-github')
-																			]),
-																		_List_Nil),
-																		$elm$html$Html$text(' GitHub')
-																	]))
-															])),
-														A2(
-														$elm$html$Html$div,
-														_List_fromArray(
-															[
-																$elm$html$Html$Attributes$class('contactLink')
-															]),
-														_List_fromArray(
-															[
-																A2(
-																$elm$html$Html$a,
-																_List_fromArray(
-																	[
-																		$elm$html$Html$Attributes$href('https://facebook.com/nitram278'),
-																		$elm$html$Html$Attributes$target('_blank')
-																	]),
-																_List_fromArray(
-																	[
-																		A2(
-																		$elm$html$Html$i,
-																		_List_fromArray(
-																			[
-																				$elm$html$Html$Attributes$class('fa fa-facebook-official')
-																			]),
-																		_List_Nil),
-																		$elm$html$Html$text('Facebook')
-																	]))
-															])),
-														A2(
-														$elm$html$Html$div,
-														_List_fromArray(
-															[
-																$elm$html$Html$Attributes$class('contactLink')
-															]),
-														_List_fromArray(
-															[
-																A2(
-																$elm$html$Html$a,
-																_List_fromArray(
-																	[
-																		$elm$html$Html$Attributes$href('https://twitter.com/nitram278'),
-																		$elm$html$Html$Attributes$target('_blank')
-																	]),
-																_List_fromArray(
-																	[
-																		A2(
-																		$elm$html$Html$i,
-																		_List_fromArray(
-																			[
-																				$elm$html$Html$Attributes$class('fa fa-twitter')
-																			]),
-																		_List_Nil),
-																		$elm$html$Html$text('Twitter')
-																	]))
-															])),
-														A2(
-														$elm$html$Html$div,
-														_List_fromArray(
-															[
-																$elm$html$Html$Attributes$class('contactLink')
-															]),
-														_List_fromArray(
-															[
-																A2(
-																$elm$html$Html$a,
-																_List_fromArray(
-																	[
-																		$elm$html$Html$Attributes$href('mailto:martin.sidorov27@gmail.com')
-																	]),
-																_List_fromArray(
-																	[
-																		A2(
-																		$elm$html$Html$i,
-																		_List_fromArray(
-																			[
-																				$elm$html$Html$Attributes$class('fa fa-envelope')
-																			]),
-																		_List_Nil),
-																		$elm$html$Html$text(lang.sendAMail)
-																	]))
-															]))
+														A3($author$project$Main$contactLink, 'https://github.com/Matrix278', 'fa fa-github', 'GitHub'),
+														A3($author$project$Main$contactLink, 'https://facebook.com/nitram278', 'fa fa-facebook-official', 'Facebook'),
+														A3($author$project$Main$contactLink, 'https://twitter.com/nitram278', 'fa fa-twitter', 'Twitter'),
+														A3($author$project$Main$contactLink, 'mailto:martin.sidorov27@gmail.com', 'fa fa-envelope', lang.sendAMail)
 													]))
 											])))
 								]))
+						])),
+					A2(
+					$elm$html$Html$footer,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$p,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text(lang.footerText)
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('© Martin Sidorov')
+								]))
+						])),
+					A2(
+					$elm$html$Html$button,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$id('scrollToTop'),
+							$elm$html$Html$Attributes$title('Scroll to top')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$i,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('fa fa-arrow-circle-up')
+								]),
+							_List_Nil)
 						]))
 				]),
 			title: lang.portfolio

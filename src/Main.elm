@@ -3,6 +3,7 @@ module Main exposing (Model, Msg(..), init, main, subscriptions, update, view)
 import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 import Json.Decode exposing (Decoder, float, int, nullable, string)
 import Json.Decode.Pipeline as DP
 import String.Extra
@@ -114,12 +115,12 @@ init englishTranslation =
     ( Model translations, Cmd.none )
 
 
-
--- UPDATE
-
-
 type Msg
     = NoOp
+
+
+
+-- UPDATE
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -352,6 +353,14 @@ view model =
                     [ p [] [ text lang.footerText ]
                     , p [] [ text "© Martin Sidorov" ]
                     ]
+
+                --<button onclick="topFunction()" id="scrollToTop" title="Scroll to top"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></button>
+                , button
+                    [ {--onClick "",--}
+                      id "scrollToTop"
+                    , title "Scroll to top"
+                    ]
+                    [ i [ class "fa fa-arrow-circle-up" ] [] ]
                 ]
 
             --    CONTACTS
