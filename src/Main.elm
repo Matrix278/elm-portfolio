@@ -352,6 +352,6 @@ view model =
             }
 
         Err err ->
-            { title = "Portfolio"
+            { title = "Error"
             , body = [ div [] [ text "Error" ] ]
             }

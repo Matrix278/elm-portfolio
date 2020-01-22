@@ -6176,7 +6176,7 @@ var $author$project$Main$view = function (model) {
 							$elm$html$Html$text('Error')
 						]))
 				]),
-			title: 'Error'
+			title: 'Portfolio'
 		};
 	}
 };
