@@ -92,16 +92,6 @@ langDecoder =
         |> DP.required "footerText" Json.Decode.string
 
 
-decodePortfolio : Json.Decode.Value -> Result Json.Decode.Error String
-decodePortfolio englishTranslation =
-    Json.Decode.decodeValue oneDecoder englishTranslation
-
-
-oneDecoder : Json.Decode.Decoder String
-oneDecoder =
-    Json.Decode.field "firstName" Json.Decode.string
-
-
 init : Json.Decode.Value -> ( Model, Cmd Msg )
 init englishTranslation =
     let
@@ -351,11 +341,8 @@ view model =
                     [ p [] [ text lang.footerText ]
                     , p [] [ text "© Martin Sidorov" ]
                     ]
-
-                --<button onclick="topFunction()" id="scrollToTop" title="Scroll to top"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></button>
                 , button
-                    [ {--onClick "",--}
-                      id "scrollToTop"
+                    [ id "scrollToTop"
                     , title "Scroll to top"
                     ]
                     [ i [ class "fa fa-arrow-circle-up" ] [] ]
