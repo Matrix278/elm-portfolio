@@ -5652,15 +5652,15 @@ var $author$project$Main$navbarList = function (logoName) {
 		function (a) {
 			return A2(
 				$elm$html$Html$li,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$href('#' + a)
-					]),
+				_List_Nil,
 				_List_fromArray(
 					[
 						A2(
 						$elm$html$Html$a,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$href('#' + a)
+							]),
 						_List_fromArray(
 							[
 								$elm$html$Html$text(
@@ -5922,17 +5922,11 @@ var $author$project$Main$view = function (model) {
 			body: _List_fromArray(
 				[
 					A2(
-					$elm$html$Html$div,
+					$elm$html$Html$header,
 					_List_Nil,
 					_List_fromArray(
 						[
-							A2(
-							$elm$html$Html$header,
-							_List_Nil,
-							_List_fromArray(
-								[
-									$author$project$Main$navbarView(lang.firstName)
-								]))
+							$author$project$Main$navbarView(lang.firstName)
 						])),
 					A2(
 					$elm$html$Html$div,

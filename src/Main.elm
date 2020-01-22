@@ -190,31 +190,13 @@ navbarList logoName =
         navigationList : List (Html Msg)
         navigationList =
             linkList
-                |> List.map (\a -> li [ href ("#" ++ a) ] [ Html.a [] [ text <| String.Extra.toTitleCase a ] ])
+                |> List.map (\a -> li [] [ Html.a [ href ("#" ++ a) ] [ text <| String.Extra.toTitleCase a ] ])
     in
     ul [ class "menu touch" ]
         (List.append
             [ li [] [ a [ href "#home", class "logo" ] [ text <| String.Extra.toTitleCase logoName ] ] ]
             navigationList
         )
-
-
-skillsList : List (Html Msg)
-skillsList =
-    let
-        list : List String
-        list =
-            [ "HTML"
-            , "CSS"
-            , "JS"
-            , "PHP"
-            , "MySQL/SQL"
-            , "Bootstrap"
-            , "C#"
-            , "React"
-            ]
-    in
-    List.map (\a -> li [] [ text a ]) list
 
 
 navbarView : String -> Html Msg
@@ -245,6 +227,24 @@ titleShadow title =
     ]
 
 
+skillsList : List (Html Msg)
+skillsList =
+    let
+        list : List String
+        list =
+            [ "HTML"
+            , "CSS"
+            , "JS"
+            , "PHP"
+            , "MySQL/SQL"
+            , "Bootstrap"
+            , "C#"
+            , "React"
+            ]
+    in
+    List.map (\a -> li [] [ text a ]) list
+
+
 skillDevicons : List (Html Msg)
 skillDevicons =
     let
@@ -268,11 +268,9 @@ view model =
         Ok lang ->
             { title = lang.portfolio
             , body =
-                [ div []
-                    --    NAVBAR
-                    [ header []
-                        [ navbarView lang.firstName
-                        ]
+                --    NAVBAR
+                [ header []
+                    [ navbarView lang.firstName
                     ]
 
                 --    NAVBAR
