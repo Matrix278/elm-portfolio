@@ -207,7 +207,7 @@ skillsList =
             , "React"
             ]
     in
-    List.map (\a -> li [] [ Html.a [] [ text a ] ]) list
+    List.map (\a -> li [] [ text a ]) list
 
 
 navbarView : String -> Html Msg
@@ -262,13 +262,20 @@ view model =
             { title = lang.portfolio
             , body =
                 [ div []
+                    --    NAVBAR
                     [ header []
                         [ navbarView lang.firstName
                         ]
                     ]
+
+                --    NAVBAR
+                -- HOME
                 , div [ class "homeBackground" ]
                     [ homeView lang.welcomeHeaderText lang.welcomeTitle lang.welcomeButton
                     ]
+
+                -- HOME
+                -- ABOUT
                 , div [ class "aboutBackground" ]
                     [ div [ class "container" ]
                         [ div [ id "about" ]
@@ -282,6 +289,9 @@ view model =
                             )
                         ]
                     ]
+
+                --    ABOUT
+                --    SKILLS
                 , div [ class "skillsBackground" ]
                     [ div [ class "container" ]
                         [ div [ id "skills" ]
@@ -296,6 +306,9 @@ view model =
                             skillDevicons
                         ]
                     ]
+
+                --    SKILLS
+                --    PORTFOLIO
                 , div [ class "portfolioBackground" ]
                     [ div [ class "container" ]
                         [ div [ id "portfolio" ]
@@ -313,7 +326,30 @@ view model =
                             )
                         ]
                     ]
+
+                --    PORFOLIO
+                --    CONTACTS
+                , div [ class "contactBackground" ]
+                    [ div [ class "container" ]
+                        [ div [ id "contact" ]
+                            ([ div [ class "contactGrid" ]
+                                [ div [ class "contactLink" ]
+                                    [ a [ href "https://github.com/Matrix278", target "_blank" ] [ i [ class "fa fa-github" ] [], text " GitHub" ] ]
+                                , div [ class "contactLink" ]
+                                    [ a [ href "https://facebook.com/nitram278", target "_blank" ] [ i [ class "fa fa-facebook-official" ] [], text "Facebook" ] ]
+                                , div [ class "contactLink" ]
+                                    [ a [ href "https://twitter.com/nitram278", target "_blank" ] [ i [ class "fa fa-twitter" ] [], text "Twitter" ] ]
+                                , div [ class "contactLink" ]
+                                    [ a [ href "mailto:martin.sidorov27@gmail.com" ] [ i [ class "fa fa-envelope" ] [], text lang.sendAMail ] ]
+                                ]
+                             ]
+                                |> List.append (titleShadow lang.contact)
+                            )
+                        ]
+                    ]
                 ]
+
+            --    CONTACTS
             }
 
         Err err ->

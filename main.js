@@ -5386,6 +5386,7 @@ var $author$project$Main$update = F2(
 		return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 	});
 var $elm$json$Json$Decode$value = _Json_decodeValue;
+var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$core$List$append = F2(
 	function (xs, ys) {
 		if (!ys.b) {
@@ -5451,7 +5452,6 @@ var $author$project$Main$educationGrid = F4(
 				]));
 	});
 var $elm$html$Html$header = _VirtualDom_node('header');
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
@@ -5804,13 +5804,7 @@ var $author$project$Main$skillsList = function () {
 				_List_Nil,
 				_List_fromArray(
 					[
-						A2(
-						$elm$html$Html$a,
-						_List_Nil,
-						_List_fromArray(
-							[
-								$elm$html$Html$text(a)
-							]))
+						$elm$html$Html$text(a)
 					]));
 		},
 		list);
@@ -6055,6 +6049,152 @@ var $author$project$Main$view = function (model) {
 														A3($author$project$Main$portfolioTile, 'https://play.google.com/store/apps/details?id=com.nitram278.rockPaperScissors', 'img/rockPaperScissors.png', lang.rockPaperScissors),
 														A3($author$project$Main$portfolioTile, 'https://play.google.com/store/apps/details?id=com.MSANDevs.Becomeahacker', 'img/becomeAHacker.png', lang.becomeAHacker),
 														A3($author$project$Main$portfolioTile, 'https://codepen.io/Matrix27/pens/public', 'https://www.npofocus.nl/thumbs/i/14000/mod_media_image/14105.w1913.0.c9cc1fa.png', lang.freeCodeCamp)
+													]))
+											])))
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('contactBackground')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('container')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$div,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$id('contact')
+										]),
+									A2(
+										$elm$core$List$append,
+										$author$project$Main$titleShadow(lang.contact),
+										_List_fromArray(
+											[
+												A2(
+												$elm$html$Html$div,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$class('contactGrid')
+													]),
+												_List_fromArray(
+													[
+														A2(
+														$elm$html$Html$div,
+														_List_fromArray(
+															[
+																$elm$html$Html$Attributes$class('contactLink')
+															]),
+														_List_fromArray(
+															[
+																A2(
+																$elm$html$Html$a,
+																_List_fromArray(
+																	[
+																		$elm$html$Html$Attributes$href('https://github.com/Matrix278'),
+																		$elm$html$Html$Attributes$target('_blank')
+																	]),
+																_List_fromArray(
+																	[
+																		A2(
+																		$elm$html$Html$i,
+																		_List_fromArray(
+																			[
+																				$elm$html$Html$Attributes$class('fa fa-github')
+																			]),
+																		_List_Nil),
+																		$elm$html$Html$text(' GitHub')
+																	]))
+															])),
+														A2(
+														$elm$html$Html$div,
+														_List_fromArray(
+															[
+																$elm$html$Html$Attributes$class('contactLink')
+															]),
+														_List_fromArray(
+															[
+																A2(
+																$elm$html$Html$a,
+																_List_fromArray(
+																	[
+																		$elm$html$Html$Attributes$href('https://facebook.com/nitram278'),
+																		$elm$html$Html$Attributes$target('_blank')
+																	]),
+																_List_fromArray(
+																	[
+																		A2(
+																		$elm$html$Html$i,
+																		_List_fromArray(
+																			[
+																				$elm$html$Html$Attributes$class('fa fa-facebook-official')
+																			]),
+																		_List_Nil),
+																		$elm$html$Html$text('Facebook')
+																	]))
+															])),
+														A2(
+														$elm$html$Html$div,
+														_List_fromArray(
+															[
+																$elm$html$Html$Attributes$class('contactLink')
+															]),
+														_List_fromArray(
+															[
+																A2(
+																$elm$html$Html$a,
+																_List_fromArray(
+																	[
+																		$elm$html$Html$Attributes$href('https://twitter.com/nitram278'),
+																		$elm$html$Html$Attributes$target('_blank')
+																	]),
+																_List_fromArray(
+																	[
+																		A2(
+																		$elm$html$Html$i,
+																		_List_fromArray(
+																			[
+																				$elm$html$Html$Attributes$class('fa fa-twitter')
+																			]),
+																		_List_Nil),
+																		$elm$html$Html$text('Twitter')
+																	]))
+															])),
+														A2(
+														$elm$html$Html$div,
+														_List_fromArray(
+															[
+																$elm$html$Html$Attributes$class('contactLink')
+															]),
+														_List_fromArray(
+															[
+																A2(
+																$elm$html$Html$a,
+																_List_fromArray(
+																	[
+																		$elm$html$Html$Attributes$href('mailto:martin.sidorov27@gmail.com')
+																	]),
+																_List_fromArray(
+																	[
+																		A2(
+																		$elm$html$Html$i,
+																		_List_fromArray(
+																			[
+																				$elm$html$Html$Attributes$class('fa fa-envelope')
+																			]),
+																		_List_Nil),
+																		$elm$html$Html$text(lang.sendAMail)
+																	]))
+															]))
 													]))
 											])))
 								]))
