@@ -144,8 +144,8 @@ subscriptions _ =
 -- VIEW
 
 
-viewGrid : String -> String -> String -> String -> Html Msg
-viewGrid columnClass agesText headerText paragraphText =
+educationGrid : String -> String -> String -> String -> Html Msg
+educationGrid columnClass agesText headerText paragraphText =
     div [ class columnClass ]
         [ h3 [] [ text agesText ]
         , hr [ class "educationLine" ] []
@@ -154,25 +154,46 @@ viewGrid columnClass agesText headerText paragraphText =
         ]
 
 
-type alias Data =
-    { distance : Int
-    , time : Int
-    }
+
+--http://nitram278.000webhostapp.com/
+--mGames.png
+--Website of games (with CMS)
 
 
-type Direction
-    = Left Data
-    | Right Data
+portfolioGrid : String -> String -> String -> Html Msg
+portfolioGrid site imageSrc title =
+    div [ class "project-tile" ]
+        [ a [ class "project", href site, target "_blank" ]
+            [ img [ class "project-image", src imageSrc ] []
+            , p [ class "prtoject-title" ]
+                [ span [ class "code" ] [ text "&lt;" ]
+                , text title
+                , span [ class "code" ] [ text "&gt;" ]
+                ]
+            ]
+        ]
 
 
-distance : Direction -> Int
-distance direction =
-    case direction of
-        Left a ->
-            a.distance
 
-        Right b ->
-            b.distance
+--type alias Data =
+--    { distance : Int
+--    , time : Int
+--    }
+--
+--
+--type Direction
+--    = Left Data
+--    | Right Data
+--
+--
+--distance : Direction -> Int
+--distance direction =
+--    case direction of
+--        Left a ->
+--            a.distance
+--
+--        Right b ->
+--            b.distance
 
 
 navbarList : String -> Html Msg
@@ -270,7 +291,7 @@ view model =
             , body =
                 [ div []
                     [ header []
-                        [ navbarView lang.portfolio
+                        [ navbarView lang.firstName
                         ]
                     ]
                 , div [ class "homeBackground" ]
@@ -280,9 +301,9 @@ view model =
                     [ div [ class "container" ]
                         [ div [ id "about" ]
                             ([ div [ class "educationGrid" ]
-                                [ viewGrid "educationFirst" "2008 - 2016" lang.student lang.schoolKehraText
-                                , viewGrid "educationSecond" "2016 - 2019" lang.juniorSoftwareDev lang.tallinnPolytechnicText
-                                , viewGrid "educationThree" "2019 - 2021" lang.juniorLogIT lang.tthkText
+                                [ educationGrid "educationFirst" "2008 - 2016" lang.student lang.schoolKehraText
+                                , educationGrid "educationSecond" "2016 - 2019" lang.juniorSoftwareDev lang.tallinnPolytechnicText
+                                , educationGrid "educationThree" "2019 - 2021" lang.juniorLogIT lang.tthkText
                                 ]
                              ]
                                 |> List.append (titleShadow lang.aboutMe)
@@ -307,10 +328,13 @@ view model =
                     [ div [ class "container" ]
                         [ div [ id "portfolio" ]
                             ([ div [ class "portfolioGrid" ]
-                                [ div [ class "project-tile" ]
-                                    [ a [ class "project", href "http://nitram278.000webhostapp.com/", target "_blank" ]
-                                        []
-                                    ]
+                                [ portfolioGrid "http://nitram278.000webhostapp.com/" "img/mGames.png" lang.websiteOfGames
+                                , portfolioGrid "http://method27.000webhostapp.com/laptops/" "img/laptops.png" lang.websiteOfLaptops
+                                , portfolioGrid "https://martceelebrate.000webhostapp.com" "img/celebrationPlanner.png" lang.websiteOfCelebrationPlanner
+                                , portfolioGrid "https://play.google.com/store/apps/details?id=com.nitram.tictactoeMS" "img/ticTacToe.png" lang.ticTacToe
+                                , portfolioGrid "https://play.google.com/store/apps/details?id=com.nitram278.rockPaperScissors" "img/rockPaperScissors.png" lang.rockPaperScissors
+                                , portfolioGrid "https://play.google.com/store/apps/details?id=com.MSANDevs.Becomeahacker" "img/becomeAHacker.png" lang.becomeAHacker
+                                , portfolioGrid "https://codepen.io/Matrix27/pens/public" "https://www.npofocus.nl/thumbs/i/14000/mod_media_image/14105.w1913.0.c9cc1fa.png" lang.freeCodeCamp
                                 ]
                              ]
                                 |> List.append (titleShadow lang.portfolio)

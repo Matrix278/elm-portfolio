@@ -5386,7 +5386,6 @@ var $author$project$Main$update = F2(
 		return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 	});
 var $elm$json$Json$Decode$value = _Json_decodeValue;
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$core$List$append = F2(
 	function (xs, ys) {
 		if (!ys.b) {
@@ -5405,7 +5404,54 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$html$Html$h3 = _VirtualDom_node('h3');
+var $elm$html$Html$h4 = _VirtualDom_node('h4');
+var $elm$html$Html$hr = _VirtualDom_node('hr');
+var $elm$html$Html$p = _VirtualDom_node('p');
+var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$Main$educationGrid = F4(
+	function (columnClass, agesText, headerText, paragraphText) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class(columnClass)
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$h3,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text(agesText)
+						])),
+					A2(
+					$elm$html$Html$hr,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('educationLine')
+						]),
+					_List_Nil),
+					A2(
+					$elm$html$Html$h4,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text(headerText)
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text(paragraphText)
+						]))
+				]));
+	});
 var $elm$html$Html$header = _VirtualDom_node('header');
+var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
@@ -5415,9 +5461,6 @@ var $elm$html$Html$Attributes$href = function (url) {
 };
 var $elm$html$Html$i = _VirtualDom_node('i');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
-var $elm$html$Html$p = _VirtualDom_node('p');
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$homeView = F3(
 	function (headerText, welcomeTitle, buttonText) {
 		return A2(
@@ -5665,6 +5708,75 @@ var $author$project$Main$navbarView = function (logoName) {
 					]))
 			]));
 };
+var $elm$html$Html$img = _VirtualDom_node('img');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $author$project$Main$portfolioGrid = F3(
+	function (site, imageSrc, title) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('project-tile')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$a,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('project'),
+							$elm$html$Html$Attributes$href(site),
+							$elm$html$Html$Attributes$target('_blank')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('project-image'),
+									$elm$html$Html$Attributes$src(imageSrc)
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('prtoject-title')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('code')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('&lt;')
+										])),
+									$elm$html$Html$text(title),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('code')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('&gt;')
+										]))
+								]))
+						]))
+				]));
+	});
 var $author$project$Main$skillDevicons = function () {
 	var skills = _List_fromArray(
 		['devicon-css3-plain-wordmark', 'devicon-javascript-plain', 'devicon-php-plain', 'devicon-mysql-plain', 'devicon-bootstrap-plain', 'devicon-react-original-wordmark', 'devicon-csharp-plain']);
@@ -5703,7 +5815,6 @@ var $author$project$Main$skillsList = function () {
 		},
 		list);
 }();
-var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
 var $elm$core$String$toUpper = _String_toUpper;
 var $elm$core$String$trim = _String_trim;
 var $elm_community$string_extra$String$Extra$camelize = function (string) {
@@ -5776,49 +5887,6 @@ var $author$project$Main$titleShadow = function (title) {
 				]))
 		]);
 };
-var $elm$html$Html$h3 = _VirtualDom_node('h3');
-var $elm$html$Html$h4 = _VirtualDom_node('h4');
-var $elm$html$Html$hr = _VirtualDom_node('hr');
-var $author$project$Main$viewGrid = F4(
-	function (columnClass, agesText, headerText, paragraphText) {
-		return A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class(columnClass)
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$h3,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(agesText)
-						])),
-					A2(
-					$elm$html$Html$hr,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('educationLine')
-						]),
-					_List_Nil),
-					A2(
-					$elm$html$Html$h4,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(headerText)
-						])),
-					A2(
-					$elm$html$Html$p,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(paragraphText)
-						]))
-				]));
-	});
 var $author$project$Main$view = function (model) {
 	var _v0 = model.translation;
 	if (_v0.$ === 'Ok') {
@@ -5836,7 +5904,7 @@ var $author$project$Main$view = function (model) {
 							_List_Nil,
 							_List_fromArray(
 								[
-									$author$project$Main$navbarView(lang.portfolio)
+									$author$project$Main$navbarView(lang.firstName)
 								]))
 						])),
 					A2(
@@ -5884,9 +5952,9 @@ var $author$project$Main$view = function (model) {
 													]),
 												_List_fromArray(
 													[
-														A4($author$project$Main$viewGrid, 'educationFirst', '2008 - 2016', lang.student, lang.schoolKehraText),
-														A4($author$project$Main$viewGrid, 'educationSecond', '2016 - 2019', lang.juniorSoftwareDev, lang.tallinnPolytechnicText),
-														A4($author$project$Main$viewGrid, 'educationThree', '2019 - 2021', lang.juniorLogIT, lang.tthkText)
+														A4($author$project$Main$educationGrid, 'educationFirst', '2008 - 2016', lang.student, lang.schoolKehraText),
+														A4($author$project$Main$educationGrid, 'educationSecond', '2016 - 2019', lang.juniorSoftwareDev, lang.tallinnPolytechnicText),
+														A4($author$project$Main$educationGrid, 'educationThree', '2019 - 2021', lang.juniorLogIT, lang.tthkText)
 													]))
 											])))
 								]))
@@ -5980,24 +6048,13 @@ var $author$project$Main$view = function (model) {
 													]),
 												_List_fromArray(
 													[
-														A2(
-														$elm$html$Html$div,
-														_List_fromArray(
-															[
-																$elm$html$Html$Attributes$class('project-tile')
-															]),
-														_List_fromArray(
-															[
-																A2(
-																$elm$html$Html$a,
-																_List_fromArray(
-																	[
-																		$elm$html$Html$Attributes$class('project'),
-																		$elm$html$Html$Attributes$href('http://nitram278.000webhostapp.com/'),
-																		$elm$html$Html$Attributes$target('_blank')
-																	]),
-																_List_Nil)
-															]))
+														A3($author$project$Main$portfolioGrid, 'http://nitram278.000webhostapp.com/', 'img/mGames.png', lang.websiteOfGames),
+														A3($author$project$Main$portfolioGrid, 'http://method27.000webhostapp.com/laptops/', 'img/laptops.png', lang.websiteOfLaptops),
+														A3($author$project$Main$portfolioGrid, 'https://martceelebrate.000webhostapp.com', 'img/celebrationPlanner.png', lang.websiteOfCelebrationPlanner),
+														A3($author$project$Main$portfolioGrid, 'https://play.google.com/store/apps/details?id=com.nitram.tictactoeMS', 'img/ticTacToe.png', lang.ticTacToe),
+														A3($author$project$Main$portfolioGrid, 'https://play.google.com/store/apps/details?id=com.nitram278.rockPaperScissors', 'img/rockPaperScissors.png', lang.rockPaperScissors),
+														A3($author$project$Main$portfolioGrid, 'https://play.google.com/store/apps/details?id=com.MSANDevs.Becomeahacker', 'img/becomeAHacker.png', lang.becomeAHacker),
+														A3($author$project$Main$portfolioGrid, 'https://codepen.io/Matrix27/pens/public', 'https://www.npofocus.nl/thumbs/i/14000/mod_media_image/14105.w1913.0.c9cc1fa.png', lang.freeCodeCamp)
 													]))
 											])))
 								]))
