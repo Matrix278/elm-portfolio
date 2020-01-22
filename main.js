@@ -5200,7 +5200,9 @@ var $elm$core$Task$perform = F2(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
 var $elm$browser$Browser$document = _Browser_document;
-var $author$project$Main$Loading = {$: 'Loading'};
+var $author$project$Main$Model = function (translation) {
+	return {translation: translation};
+};
 var $elm$json$Json$Decode$decodeValue = _Json_run;
 var $author$project$Main$Language = function (portfolio) {
 	return function (firstName) {
@@ -5212,20 +5214,22 @@ var $author$project$Main$Language = function (portfolio) {
 							return function (juniorSoftwareDev) {
 								return function (tallinnPolytechnicText) {
 									return function (juniorLogIT) {
-										return function (aboutMe) {
-											return function (skillsText) {
-												return function (skills) {
-													return function (websiteOfGames) {
-														return function (websiteOfLaptops) {
-															return function (websiteOfCelebrationPlanner) {
-																return function (ticTacToe) {
-																	return function (rockPaperScissors) {
-																		return function (becomeAHacker) {
-																			return function (freeCodeCamp) {
-																				return function (contact) {
-																					return function (sendAMail) {
-																						return function (footerText) {
-																							return {aboutMe: aboutMe, becomeAHacker: becomeAHacker, contact: contact, firstName: firstName, footerText: footerText, freeCodeCamp: freeCodeCamp, juniorLogIT: juniorLogIT, juniorSoftwareDev: juniorSoftwareDev, portfolio: portfolio, rockPaperScissors: rockPaperScissors, schoolKehraText: schoolKehraText, sendAMail: sendAMail, skills: skills, skillsText: skillsText, student: student, tallinnPolytechnicText: tallinnPolytechnicText, ticTacToe: ticTacToe, websiteOfCelebrationPlanner: websiteOfCelebrationPlanner, websiteOfGames: websiteOfGames, websiteOfLaptops: websiteOfLaptops, welcomeButton: welcomeButton, welcomeHeaderText: welcomeHeaderText, welcomeTitle: welcomeTitle};
+										return function (tthkText) {
+											return function (aboutMe) {
+												return function (skillsText) {
+													return function (skills) {
+														return function (websiteOfGames) {
+															return function (websiteOfLaptops) {
+																return function (websiteOfCelebrationPlanner) {
+																	return function (ticTacToe) {
+																		return function (rockPaperScissors) {
+																			return function (becomeAHacker) {
+																				return function (freeCodeCamp) {
+																					return function (contact) {
+																						return function (sendAMail) {
+																							return function (footerText) {
+																								return {aboutMe: aboutMe, becomeAHacker: becomeAHacker, contact: contact, firstName: firstName, footerText: footerText, freeCodeCamp: freeCodeCamp, juniorLogIT: juniorLogIT, juniorSoftwareDev: juniorSoftwareDev, portfolio: portfolio, rockPaperScissors: rockPaperScissors, schoolKehraText: schoolKehraText, sendAMail: sendAMail, skills: skills, skillsText: skillsText, student: student, tallinnPolytechnicText: tallinnPolytechnicText, ticTacToe: ticTacToe, tthkText: tthkText, websiteOfCelebrationPlanner: websiteOfCelebrationPlanner, websiteOfGames: websiteOfGames, websiteOfLaptops: websiteOfLaptops, welcomeButton: welcomeButton, welcomeHeaderText: welcomeHeaderText, welcomeTitle: welcomeTitle};
+																							};
 																						};
 																					};
 																				};
@@ -5313,45 +5317,49 @@ var $author$project$Main$langDecoder = A3(
 													$elm$json$Json$Decode$string,
 													A3(
 														$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-														'juniorLogIT',
+														'tthkText',
 														$elm$json$Json$Decode$string,
 														A3(
 															$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-															'tallinnPolytechnicText',
+															'juniorLogIT',
 															$elm$json$Json$Decode$string,
 															A3(
 																$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-																'juniorSoftwareDev',
+																'tallinnPolytechnicText',
 																$elm$json$Json$Decode$string,
 																A3(
 																	$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-																	'schoolKehraText',
+																	'juniorSoftwareDev',
 																	$elm$json$Json$Decode$string,
 																	A3(
 																		$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-																		'student',
+																		'schoolKehraText',
 																		$elm$json$Json$Decode$string,
 																		A3(
 																			$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-																			'welcomeButton',
+																			'student',
 																			$elm$json$Json$Decode$string,
 																			A3(
 																				$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-																				'welcomeTitle',
+																				'welcomeButton',
 																				$elm$json$Json$Decode$string,
 																				A3(
 																					$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-																					'welcomeHeaderText',
+																					'welcomeTitle',
 																					$elm$json$Json$Decode$string,
 																					A3(
 																						$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-																						'firstName',
+																						'welcomeHeaderText',
 																						$elm$json$Json$Decode$string,
 																						A3(
 																							$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
-																							'portfolio',
+																							'firstName',
 																							$elm$json$Json$Decode$string,
-																							$elm$json$Json$Decode$succeed($author$project$Main$Language))))))))))))))))))))))));
+																							A3(
+																								$NoRedInk$elm_json_decode_pipeline$Json$Decode$Pipeline$required,
+																								'portfolio',
+																								$elm$json$Json$Decode$string,
+																								$elm$json$Json$Decode$succeed($author$project$Main$Language)))))))))))))))))))))))));
 var $author$project$Main$decodeTranslations = function (englishTranslation) {
 	return A2($elm$json$Json$Decode$decodeValue, $author$project$Main$langDecoder, englishTranslation);
 };
@@ -5359,11 +5367,14 @@ var $elm$core$Debug$log = _Debug_log;
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (englishTranslation) {
+	var translations = $author$project$Main$decodeTranslations(englishTranslation);
 	var _v0 = A2(
 		$elm$core$Debug$log,
-		'tomato',
+		'Log',
 		$author$project$Main$decodeTranslations(englishTranslation));
-	return _Utils_Tuple2($author$project$Main$Loading, $elm$core$Platform$Cmd$none);
+	return _Utils_Tuple2(
+		$author$project$Main$Model(translations),
+		$elm$core$Platform$Cmd$none);
 };
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
@@ -5809,188 +5820,207 @@ var $author$project$Main$viewGrid = F4(
 				]));
 	});
 var $author$project$Main$view = function (model) {
-	return {
-		body: _List_fromArray(
-			[
-				A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$header,
-						_List_Nil,
-						_List_fromArray(
-							[
-								$author$project$Main$navbarView('Martin')
-							]))
-					])),
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('homeBackground')
-					]),
-				_List_fromArray(
-					[
-						A3($author$project$Main$homeView, 'Welcome to my portfolio', 'Nice to meet you', 'More about me')
-					])),
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('aboutBackground')
-					]),
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$div,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('container')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$div,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$id('about')
-									]),
-								A2(
-									$elm$core$List$append,
-									$author$project$Main$titleShadow('About me'),
+	var _v0 = model.translation;
+	if (_v0.$ === 'Ok') {
+		var lang = _v0.a;
+		return {
+			body: _List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$header,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$author$project$Main$navbarView(lang.portfolio)
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('homeBackground')
+						]),
+					_List_fromArray(
+						[
+							A3($author$project$Main$homeView, lang.welcomeHeaderText, lang.welcomeTitle, lang.welcomeButton)
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('aboutBackground')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('container')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$div,
 									_List_fromArray(
 										[
-											A2(
-											$elm$html$Html$div,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$class('educationGrid')
-												]),
-											_List_fromArray(
-												[
-													A4($author$project$Main$viewGrid, 'educationFirst', '2008 - 2016', 'Student', 'The first school days were in Kehra Gymnasium for 9 years. After 9 class i went to Tallinn Polytechnic.'),
-													A4($author$project$Main$viewGrid, 'educationSecond', '2016 - 2019', 'Junior Software Developer', 'In Tallinn Polytechnic i studied for Junior Software Developer, where i learned how to do websites, programms and apps for mobiles. The languages and technologies HTML, CSS, JS, Bootstrap, PHP, SQL, C# were learned here.'),
-													A4($author$project$Main$viewGrid, 'educationThree', '2019 - 2021', 'Junior Logistics IT Systems Specialist', 'For now i study for Logistics IT Systems Specialist.')
-												]))
-										])))
-							]))
-					])),
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('skillsBackground')
-					]),
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$div,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('container')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$div,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$id('skills')
-									]),
-								_List_fromArray(
-									[
-										A2(
-										$elm$html$Html$div,
+											$elm$html$Html$Attributes$id('about')
+										]),
+									A2(
+										$elm$core$List$append,
+										$author$project$Main$titleShadow(lang.aboutMe),
 										_List_fromArray(
 											[
-												$elm$html$Html$Attributes$class('skillsText')
-											]),
-										A2(
-											$elm$core$List$append,
-											$author$project$Main$titleShadow('Skills'),
-											_List_fromArray(
-												[
-													A2(
-													$elm$html$Html$p,
-													_List_Nil,
-													_List_fromArray(
-														[
-															$elm$html$Html$text('I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path.')
-														])),
-													A2($elm$html$Html$ul, _List_Nil, $author$project$Main$skillsList)
-												])))
-									])),
-								A2(
-								$elm$html$Html$div,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class('skillsGrid')
-									]),
-								$author$project$Main$skillDevicons)
-							]))
-					])),
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('portfolio')
-					]),
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$div,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('container')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$div,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$id('portfolio')
-									]),
-								A2(
-									$elm$core$List$append,
-									$author$project$Main$titleShadow('Portfolio'),
+												A2(
+												$elm$html$Html$div,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$class('educationGrid')
+													]),
+												_List_fromArray(
+													[
+														A4($author$project$Main$viewGrid, 'educationFirst', '2008 - 2016', lang.student, lang.schoolKehraText),
+														A4($author$project$Main$viewGrid, 'educationSecond', '2016 - 2019', lang.juniorSoftwareDev, lang.tallinnPolytechnicText),
+														A4($author$project$Main$viewGrid, 'educationThree', '2019 - 2021', lang.juniorLogIT, lang.tthkText)
+													]))
+											])))
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('skillsBackground')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('container')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$div,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$id('skills')
+										]),
 									_List_fromArray(
 										[
 											A2(
 											$elm$html$Html$div,
 											_List_fromArray(
 												[
-													$elm$html$Html$Attributes$class('portfolioGrid')
+													$elm$html$Html$Attributes$class('skillsText')
 												]),
-											_List_fromArray(
-												[
-													A2(
-													$elm$html$Html$div,
-													_List_fromArray(
-														[
-															$elm$html$Html$Attributes$class('project-tile')
-														]),
-													_List_fromArray(
-														[
-															A2(
-															$elm$html$Html$a,
-															_List_fromArray(
-																[
-																	$elm$html$Html$Attributes$class('project'),
-																	$elm$html$Html$Attributes$href('http://nitram278.000webhostapp.com/'),
-																	$elm$html$Html$Attributes$target('_blank')
-																]),
-															_List_Nil)
-														]))
-												]))
-										])))
-							]))
-					]))
-			]),
-		title: 'Portfolio'
-	};
+											A2(
+												$elm$core$List$append,
+												$author$project$Main$titleShadow(lang.skills),
+												_List_fromArray(
+													[
+														A2(
+														$elm$html$Html$p,
+														_List_Nil,
+														_List_fromArray(
+															[
+																$elm$html$Html$text(lang.skillsText)
+															])),
+														A2($elm$html$Html$ul, _List_Nil, $author$project$Main$skillsList)
+													])))
+										])),
+									A2(
+									$elm$html$Html$div,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('skillsGrid')
+										]),
+									$author$project$Main$skillDevicons)
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('portfolio')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('container')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$div,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$id('portfolio')
+										]),
+									A2(
+										$elm$core$List$append,
+										$author$project$Main$titleShadow(lang.portfolio),
+										_List_fromArray(
+											[
+												A2(
+												$elm$html$Html$div,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$class('portfolioGrid')
+													]),
+												_List_fromArray(
+													[
+														A2(
+														$elm$html$Html$div,
+														_List_fromArray(
+															[
+																$elm$html$Html$Attributes$class('project-tile')
+															]),
+														_List_fromArray(
+															[
+																A2(
+																$elm$html$Html$a,
+																_List_fromArray(
+																	[
+																		$elm$html$Html$Attributes$class('project'),
+																		$elm$html$Html$Attributes$href('http://nitram278.000webhostapp.com/'),
+																		$elm$html$Html$Attributes$target('_blank')
+																	]),
+																_List_Nil)
+															]))
+													]))
+											])))
+								]))
+						]))
+				]),
+			title: lang.portfolio
+		};
+	} else {
+		var err = _v0.a;
+		return {
+			body: _List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Error')
+						]))
+				]),
+			title: 'Portfolio'
+		};
+	}
 };
 var $author$project$Main$main = $elm$browser$Browser$document(
 	{init: $author$project$Main$init, subscriptions: $author$project$Main$subscriptions, update: $author$project$Main$update, view: $author$project$Main$view});

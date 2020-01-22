@@ -25,8 +25,8 @@ main =
 -- MODEL
 
 
-type Model
-    = Loading
+type alias Model =
+    { translation : Result Json.Decode.Error Language }
 
 
 type alias Language =
@@ -40,6 +40,7 @@ type alias Language =
     , juniorSoftwareDev : String
     , tallinnPolytechnicText : String
     , juniorLogIT : String
+    , tthkText : String
     , aboutMe : String
     , skillsText : String
     , skills : String
@@ -74,6 +75,7 @@ langDecoder =
         |> DP.required "juniorSoftwareDev" Json.Decode.string
         |> DP.required "tallinnPolytechnicText" Json.Decode.string
         |> DP.required "juniorLogIT" Json.Decode.string
+        |> DP.required "tthkText" Json.Decode.string
         |> DP.required "aboutMe" Json.Decode.string
         |> DP.required "skillsText" Json.Decode.string
         |> DP.required "skills" Json.Decode.string
@@ -107,9 +109,9 @@ init englishTranslation =
             decodeTranslations englishTranslation
 
         _ =
-            Debug.log "tomato" <| decodeTranslations englishTranslation
+            Debug.log "Log" <| decodeTranslations englishTranslation
     in
-    ( Loading, Cmd.none )
+    ( Model translations, Cmd.none )
 
 
 
@@ -150,6 +152,27 @@ viewGrid columnClass agesText headerText paragraphText =
         , h4 [] [ text headerText ]
         , p [] [ text paragraphText ]
         ]
+
+
+type alias Data =
+    { distance : Int
+    , time : Int
+    }
+
+
+type Direction
+    = Left Data
+    | Right Data
+
+
+distance : Direction -> Int
+distance direction =
+    case direction of
+        Left a ->
+            a.distance
+
+        Right b ->
+            b.distance
 
 
 navbarList : String -> Html Msg
@@ -241,56 +264,63 @@ skillDevicons =
 
 view : Model -> Browser.Document Msg
 view model =
-    { title = "Portfolio"
-    , body =
-        [ div []
-            [ header []
-                [ navbarView "Martin"
-                ]
-            ]
-        , div [ class "homeBackground" ]
-            [ homeView "Welcome to my portfolio" "Nice to meet you" "More about me"
-            ]
-        , div [ class "aboutBackground" ]
-            [ div [ class "container" ]
-                [ div [ id "about" ]
-                    ([ div [ class "educationGrid" ]
-                        [ viewGrid "educationFirst" "2008 - 2016" "Student" "The first school days were in Kehra Gymnasium for 9 years. After 9 class i went to Tallinn Polytechnic."
-                        , viewGrid "educationSecond" "2016 - 2019" "Junior Software Developer" "In Tallinn Polytechnic i studied for Junior Software Developer, where i learned how to do websites, programms and apps for mobiles. The languages and technologies HTML, CSS, JS, Bootstrap, PHP, SQL, C# were learned here."
-                        , viewGrid "educationThree" "2019 - 2021" "Junior Logistics IT Systems Specialist" "For now i study for Logistics IT Systems Specialist."
+    case model.translation of
+        Ok lang ->
+            { title = lang.portfolio
+            , body =
+                [ div []
+                    [ header []
+                        [ navbarView lang.portfolio
                         ]
-                     ]
-                        |> List.append (titleShadow "About me")
-                    )
-                ]
-            ]
-        , div [ class "skillsBackground" ]
-            [ div [ class "container" ]
-                [ div [ id "skills" ]
-                    [ div [ class "skillsText" ]
-                        ([ p [] [ text "I love to learn new technologies. Next to, you can see some of those technologies that i have learned at my software developer path." ]
-                         , ul [] <| skillsList
-                         ]
-                            |> List.append (titleShadow "Skills")
-                        )
                     ]
-                , div [ class "skillsGrid" ]
-                    skillDevicons
-                ]
-            ]
-        , div [ class "portfolio" ]
-            [ div [ class "container" ]
-                [ div [ id "portfolio" ]
-                    ([ div [ class "portfolioGrid" ]
-                        [ div [ class "project-tile" ]
-                            [ a [ class "project", href "http://nitram278.000webhostapp.com/", target "_blank" ]
-                                []
-                            ]
+                , div [ class "homeBackground" ]
+                    [ homeView lang.welcomeHeaderText lang.welcomeTitle lang.welcomeButton
+                    ]
+                , div [ class "aboutBackground" ]
+                    [ div [ class "container" ]
+                        [ div [ id "about" ]
+                            ([ div [ class "educationGrid" ]
+                                [ viewGrid "educationFirst" "2008 - 2016" lang.student lang.schoolKehraText
+                                , viewGrid "educationSecond" "2016 - 2019" lang.juniorSoftwareDev lang.tallinnPolytechnicText
+                                , viewGrid "educationThree" "2019 - 2021" lang.juniorLogIT lang.tthkText
+                                ]
+                             ]
+                                |> List.append (titleShadow lang.aboutMe)
+                            )
                         ]
-                     ]
-                        |> List.append (titleShadow "Portfolio")
-                    )
+                    ]
+                , div [ class "skillsBackground" ]
+                    [ div [ class "container" ]
+                        [ div [ id "skills" ]
+                            [ div [ class "skillsText" ]
+                                ([ p [] [ text lang.skillsText ]
+                                 , ul [] <| skillsList
+                                 ]
+                                    |> List.append (titleShadow lang.skills)
+                                )
+                            ]
+                        , div [ class "skillsGrid" ]
+                            skillDevicons
+                        ]
+                    ]
+                , div [ class "portfolio" ]
+                    [ div [ class "container" ]
+                        [ div [ id "portfolio" ]
+                            ([ div [ class "portfolioGrid" ]
+                                [ div [ class "project-tile" ]
+                                    [ a [ class "project", href "http://nitram278.000webhostapp.com/", target "_blank" ]
+                                        []
+                                    ]
+                                ]
+                             ]
+                                |> List.append (titleShadow lang.portfolio)
+                            )
+                        ]
+                    ]
                 ]
-            ]
-        ]
-    }
+            }
+
+        Err err ->
+            { title = "Portfolio"
+            , body = [ div [] [ text "Error" ] ]
+            }
